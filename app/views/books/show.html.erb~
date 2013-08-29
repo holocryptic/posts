@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @book.name %>
+</p>
+
+
+<h2> Posts:</h2>
+<%= @book.posts.each do |post| %>
+<p>
+	<b> User: </b>
+	<%= user.user %>
+</p>
+
+<p> <b> Post: </b>
+ <%= post.body %>
+</p> 
+
+
+<h2> Add a post :</h2>
+<%= form_for ([@book, @book.post.build]) do |f| %>
+  <div class="field">
+    <%= f.label :title %> <br />
+    <%= f.texxt_field :title %>
+  </div> 
+  <div class="field">
+    <%= f.label :text %> <br />
+    <%= f.texxt_field :text %>
+  </div> 
+  <div class="action">
+    <%= f.submit %> <br />
+  </div> 
+<% end %>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

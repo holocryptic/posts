@@ -1,7 +1,6 @@
 Posts::Application.routes.draw do
-  resources :posts
-
-  resources :books
+resources :posts
+resources :books  
 
 resources :books do  
 	resources :posts do
@@ -9,8 +8,9 @@ resources :books do
 	end
 end
 
-get "book" => "books#index"
- 
+#get "books" => "books#index"
+#get "books#book_id_#post" => "posts#index"
+#get "comments" => "comments#index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
